@@ -4,6 +4,7 @@ import path from "path";
 import runtimeErrorOverlay from "@replit/vite-plugin-runtime-error-modal";
 
 export default defineConfig({
+  base: process.env.NODE_ENV === 'production' ? '/workspace/' : '/',
   plugins: [
     react(),
     runtimeErrorOverlay(),
@@ -37,5 +38,4 @@ export default defineConfig({
       deny: ["**/.*"],
     },
   },
-  base: process.env.NODE_ENV === 'production' ? '/' : '/',
 });
