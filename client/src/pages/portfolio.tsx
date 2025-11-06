@@ -144,8 +144,8 @@ function HeroSection() {
 
                   <div className="absolute inset-4 flex items-center justify-center bg-muted/30 backdrop-blur border border-primary/20">
                     <img 
-                      src="/portrait.png" 
-                      alt="Jayakumar M - Web Architect & QA Innovator" 
+                      src={`${import.meta.env.BASE_URL}portrait.png`}
+                      alt="Jayakumar M - Web Architect & QA Innovator"
                       className="w-full h-full object-cover"
                     />
                   </div>
