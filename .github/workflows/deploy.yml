@@ -1,4 +1,3 @@
-
 name: Deploy to GitHub Pages
 
 on:
@@ -16,9 +15,15 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
+env:
+  # Update this to your framework build output dir after verifying locally (dist / build / public / out)
+  ARTIFACT_PATH: dist
+
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      artifact-path: ${{ env.ARTIFACT_PATH }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -37,20 +42,29 @@ jobs:
         env:
           NODE_ENV: production
 
-      - name: Setup Pages
+      - name: Verify build output (debug)
+        # This step helps confirm that the output exists in CI logs
+        run: |
+          echo "Listing artifact dir: $ARTIFACT_PATH"
+          ls -la $ARTIFACT_PATH || (echo "Directory $ARTIFACT_PATH not found" && exit 1)
+
+      - name: Setup Pages (ensure repository Pages is configured)
         uses: actions/configure-pages@v4
+        # No inputs here; configure-pages will create the Pages site if permissions allow.
+        # If you prefer to forcibly enable pages via this action, you can add the `enablement` input
+        # but manual enable in Settings is simpler while debugging.
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './dist/public'
+          path: ${{ env.ARTIFACT_PATH }}
 
   deploy:
+    needs: build
+    runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    needs: build
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
