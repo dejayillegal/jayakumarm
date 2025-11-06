@@ -1,5 +1,4 @@
 // vite.config.js
-import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
@@ -12,7 +11,16 @@ const __dirname = path.dirname(__filename);
 export default defineConfig(async () => {
   const repoBase = "/jayakumarm/";
 
-  const plugins = [react(), runtimeErrorOverlay()];
+  const plugins = [
+    react({
+      jsxRuntime: "automatic", // ✅ ensures React global is not required
+      babel: {
+        presets: [],
+        plugins: [],
+      },
+    }),
+    runtimeErrorOverlay(),
+  ];
 
   if (process.env.NODE_ENV !== "production" && process.env.REPL_ID !== undefined) {
     const carto = await import("@replit/vite-plugin-cartographer").then((m) => m.cartographer());
@@ -34,13 +42,13 @@ export default defineConfig(async () => {
     build: {
       outDir: path.resolve(__dirname, "dist/public"),
       emptyOutDir: true,
-      sourcemap: false
+      sourcemap: false,
     },
     server: {
       fs: {
         strict: true,
-        deny: ["**/.*"]
-      }
-    }
+        deny: ["**/.*"],
+      },
+    },
   };
 });
