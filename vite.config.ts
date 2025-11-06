@@ -1,4 +1,4 @@
-// vite.config.js (or .ts)
+// vite.config.js
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
@@ -9,7 +9,7 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default defineConfig(async () => {
-  const repoBase = "/jayakumarm/"; // <-- important
+  const repoBase = "/jayakumarm/";
 
   const plugins = [react(), runtimeErrorOverlay()];
 
@@ -33,13 +33,13 @@ export default defineConfig(async () => {
     build: {
       outDir: path.resolve(__dirname, "dist/public"),
       emptyOutDir: true,
-      sourcemap: false,
+      sourcemap: false
     },
     server: {
       fs: {
         strict: true,
-        deny: ["**/.*"],
-      },
-    },
+        deny: ["**/.*"]
+      }
+    }
   };
 });
