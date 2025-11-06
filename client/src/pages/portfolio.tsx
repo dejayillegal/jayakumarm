@@ -143,17 +143,15 @@ function HeroSection() {
                   <div className="absolute bottom-2 right-2 w-4 h-4 bg-primary animate-pulse-orange"></div>
                   
                   <div className="absolute inset-4 flex items-center justify-center bg-muted/30 backdrop-blur border border-primary/20">
-                    <div className="text-center space-y-4">
-                      <Terminal className="w-20 h-20 mx-auto text-primary animate-pulse" />
-                      <div className="text-xs font-mono text-muted-foreground">
-                        <p>SYSTEM_ID: JM_2025</p>
-                        <p>STATUS: <span className="text-primary animate-pulse">ONLINE</span></p>
-                      </div>
-                    </div>
+                    <img 
+                      src="/portrait.png" 
+                      alt="Jayakumar M - Web Architect & QA Innovator" 
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                 </div>
 
-                <div className="flex flex-wrap gap-2 justify-center" data-testid="container-skills">
+                <div className="flex flex-wrap gap-2 justify-center" data-testid="container-skills"></div>
                   {["Automation", "Architecture", "Quality • Reliability"].map((skill, i) => (
                     <motion.div
                       key={skill}
