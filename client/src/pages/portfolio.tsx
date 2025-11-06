@@ -86,7 +86,7 @@ function HeroSection() {
                 <span className="text-foreground">{displayedText}</span>
                 {showCursor && <span className="inline-block w-2 h-5 bg-primary ml-1 animate-blink"></span>}
               </div>
-              
+
               <p className="text-sm md:text-base text-muted-foreground font-mono leading-relaxed" data-testid="text-description">
                 Precision-crafted pipelines, resilient architectures, and humane interfaces. Engineered yet emotional.
               </p>
@@ -110,7 +110,7 @@ function HeroSection() {
                   CONTACT <span className="text-primary ml-1">↗</span>
                 </a>
               </Button>
-              
+
               <Button 
                 asChild
                 variant="outline"
@@ -133,7 +133,7 @@ function HeroSection() {
           >
             <Card className="relative border-2 border-primary/50 bg-card/50 backdrop-blur-sm overflow-hidden group hover-elevate" data-testid="card-profile">
               <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-              
+
               <CardContent className="p-8 md:p-12 relative z-10">
                 <div className="aspect-square relative mb-6">
                   <div className="absolute inset-0 border-2 border-primary/30 animate-pulse-orange"></div>
@@ -141,7 +141,7 @@ function HeroSection() {
                   <div className="absolute top-2 right-2 w-4 h-4 bg-primary animate-pulse-orange"></div>
                   <div className="absolute bottom-2 left-2 w-4 h-4 bg-primary animate-pulse-orange"></div>
                   <div className="absolute bottom-2 right-2 w-4 h-4 bg-primary animate-pulse-orange"></div>
-                  
+
                   <div className="absolute inset-4 flex items-center justify-center bg-muted/30 backdrop-blur border border-primary/20">
                     <img 
                       src="/portrait.png" 
@@ -173,7 +173,7 @@ function HeroSection() {
             </Card>
           </motion.div>
         </div>
-      </motion.div>
+      </div>
 
       <motion.div
         initial={{ opacity: 0 }}
@@ -183,7 +183,6 @@ function HeroSection() {
       >
         <ChevronDown className="w-6 h-6 text-primary animate-bounce" />
       </motion.div>
-    </div>
     </section>
   );
 }
@@ -474,15 +473,15 @@ function TimelineSection() {
                         EXECUTED
                       </Badge>
                     </div>
-                    
+
                     <h3 className="text-lg md:text-xl font-bold font-mono text-foreground" data-testid={`heading-position-${i}`}>
                       {entry.title}
                     </h3>
-                    
+
                     <p className="text-sm md:text-base font-mono text-muted-foreground" data-testid={`text-company-${i}`}>
                       {entry.company}
                     </p>
-                    
+
                     <p className="text-sm md:text-base font-mono text-muted-foreground leading-relaxed pt-2" data-testid={`text-description-${i}`}>
                       {'>> '}{entry.description}
                     </p>
@@ -527,7 +526,7 @@ function Footer() {
             <p className="text-sm md:text-base font-mono text-muted-foreground" data-testid="text-footer-roles">
               Web Developer <span className="text-primary">•</span> Systems Architect <span className="text-primary">•</span> Test Architect
             </p>
-            
+
             <div className="flex items-center justify-center gap-2 mt-4">
               <p className="text-sm font-mono text-muted-foreground" data-testid="text-footer-status">
                 Status: AVAILABLE <span className="text-primary">•</span> ADVISORY
@@ -550,7 +549,7 @@ function Footer() {
               <Mail className="w-4 h-4" />
               <span className="group-hover:underline">jmunuswa@gmail.com</span>
             </a>
-            
+
             <a 
               href="tel:+919818967280" 
               className="flex items-center justify-center gap-2 font-mono text-sm text-muted-foreground hover:text-primary transition-colors group"
@@ -559,7 +558,7 @@ function Footer() {
               <Phone className="w-4 h-4" />
               <span className="group-hover:underline">+91-9818967280</span>
             </a>
-            
+
             <a 
               href="https://linkedin.com/in/jmunuswa" 
               target="_blank"
@@ -570,7 +569,7 @@ function Footer() {
               <Linkedin className="w-4 h-4" />
               <span className="group-hover:underline">linkedin.com/in/jmunuswa</span>
             </a>
-            
+
             <a 
               href="https://github.com/dejayillegal" 
               target="_blank"
