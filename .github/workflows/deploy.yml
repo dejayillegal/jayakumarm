@@ -2,8 +2,7 @@ name: Deploy to GitHub Pages
 
 on:
   push:
-    branches:
-      - main
+    branches: [ main ]
   workflow_dispatch:
 
 permissions:
@@ -15,53 +14,43 @@ concurrency:
   group: "pages"
   cancel-in-progress: false
 
-env:
-  # Update this to your framework build output dir after verifying locally (dist / build / public / out)
-  ARTIFACT_PATH: dist
-
 jobs:
   build:
     runs-on: ubuntu-latest
-    outputs:
-      artifact-path: ${{ env.ARTIFACT_PATH }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Setup Node
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: 20
           cache: 'npm'
 
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
+      - name: Build project
         run: npm run build
-        env:
-          NODE_ENV: production
 
-      - name: Verify build output (debug)
-        # This step helps confirm that the output exists in CI logs
+      - name: Verify build output (CI)
         run: |
-          echo "Listing artifact dir: $ARTIFACT_PATH"
-          ls -la $ARTIFACT_PATH || (echo "Directory $ARTIFACT_PATH not found" && exit 1)
+          echo "Listing top-level contents of dist/public:"
+          ls -la dist/public || (echo "dist/public missing" && exit 1)
+          echo "--- assets ---"
+          ls -la dist/public/assets || echo "assets missing"
 
-      - name: Setup Pages (ensure repository Pages is configured)
+      - name: Setup Pages
         uses: actions/configure-pages@v4
-        # No inputs here; configure-pages will create the Pages site if permissions allow.
-        # If you prefer to forcibly enable pages via this action, you can add the `enablement` input
-        # but manual enable in Settings is simpler while debugging.
 
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: ${{ env.ARTIFACT_PATH }}
+          path: ./dist/public
 
   deploy:
-    needs: build
     runs-on: ubuntu-latest
+    needs: build
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
