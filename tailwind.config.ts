@@ -96,10 +96,67 @@ export default {
           from: { height: "var(--radix-accordion-content-height)" },
           to: { height: "0" },
         },
+        "typewriter": {
+          "0%": { width: "0%" },
+          "100%": { width: "100%" },
+        },
+        "blink": {
+          "0%, 100%": { opacity: "1" },
+          "50%": { opacity: "0" },
+        },
+        "flicker": {
+          "0%, 100%": { opacity: "1" },
+          "41.99%": { opacity: "1" },
+          "42%": { opacity: "0.6" },
+          "43%": { opacity: "1" },
+          "45.99%": { opacity: "1" },
+          "46%": { opacity: "0.4" },
+          "46.5%": { opacity: "1" },
+        },
+        "pulse-orange": {
+          "0%, 100%": { 
+            opacity: "1",
+            boxShadow: "0 0 8px rgba(255, 107, 0, 0.4), 0 0 16px rgba(255, 107, 0, 0.2)"
+          },
+          "50%": { 
+            opacity: "0.8",
+            boxShadow: "0 0 16px rgba(255, 107, 0, 0.6), 0 0 32px rgba(255, 107, 0, 0.3)"
+          },
+        },
+        "slide-in-left": {
+          "0%": { transform: "translateX(-100%)", opacity: "0" },
+          "100%": { transform: "translateX(0)", opacity: "1" },
+        },
+        "slide-in-right": {
+          "0%": { transform: "translateX(100%)", opacity: "0" },
+          "100%": { transform: "translateX(0)", opacity: "1" },
+        },
+        "fade-in": {
+          "0%": { opacity: "0" },
+          "100%": { opacity: "1" },
+        },
+        "loading-bar": {
+          "0%": { width: "0%" },
+          "100%": { width: "100%" },
+        },
+        "matrix-decode": {
+          "0%": { opacity: "0", filter: "blur(10px)" },
+          "50%": { opacity: "0.5", filter: "blur(5px)" },
+          "100%": { opacity: "1", filter: "blur(0px)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        "typewriter": "typewriter 2s steps(40) 1s forwards",
+        "blink": "blink 1s step-end infinite",
+        "flicker": "flicker 3s linear infinite",
+        "pulse-orange": "pulse-orange 2s ease-in-out infinite",
+        "slide-in-left": "slide-in-left 0.6s ease-out forwards",
+        "slide-in-right": "slide-in-right 0.6s ease-out forwards",
+        "fade-in": "fade-in 0.8s ease-out forwards",
+        "loading-bar": "loading-bar 1.5s ease-out forwards",
+        "matrix-decode": "matrix-decode 1s ease-out forwards",
       },
     },
   },
