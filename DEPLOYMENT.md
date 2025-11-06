@@ -38,9 +38,14 @@ To use a custom domain:
 2. Configure your domain's DNS settings to point to GitHub Pages
 3. Update the repository settings to use your custom domain
 
-## Replit Deployment
+### Build Process:
 
-For hosting on Replit, your site is already configured:
-- The site runs on port 5000 by default
-- Click the "Deploy" button in Replit to create a production deployment
-- Your site will be available at `https://[your-repl-name].[your-username].repl.co`
+The GitHub Actions workflow:
+1. Checks out your code
+2. Sets up Node.js 20
+3. Installs dependencies with `npm ci`
+4. Runs `npm run build` to create production assets
+5. Uploads the built files from `dist/public` to GitHub Pages
+6. Deploys to your GitHub Pages site
+
+The build is completely standalone and does not require any Replit-specific configuration.

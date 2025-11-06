@@ -29,7 +29,7 @@ export default function Header() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-[100] transition-all duration-300 pointer-events-auto ${
         isScrolled
           ? "bg-background/95 backdrop-blur-md border-b-2 border-primary/30 shadow-lg"
           : "bg-transparent"
@@ -41,7 +41,7 @@ export default function Header() {
           {/* Logo */}
           <motion.a
             href="#"
-            className="flex items-center gap-2 group"
+            className="flex items-center gap-2 group cursor-pointer pointer-events-auto z-[110]"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             data-testid="logo-link"
@@ -58,21 +58,22 @@ export default function Header() {
           </motion.a>
 
           {/* Desktop Navigation */}
-          <nav className="hidden md:flex items-center gap-1" data-testid="nav-desktop">
+          <nav className="hidden md:flex items-center gap-1 pointer-events-auto" data-testid="nav-desktop">
             {navItems.map((item, i) => (
               <motion.div
                 key={item.label}
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * i }}
+                className="pointer-events-auto"
               >
                 <Button
                   asChild
                   variant="ghost"
-                  className="font-mono text-sm hover:text-primary hover:bg-primary/10 transition-colors"
+                  className="font-mono text-sm hover:text-primary hover:bg-primary/10 transition-colors cursor-pointer pointer-events-auto"
                   data-testid={`nav-item-${i}`}
                 >
-                  <a href={item.href}>
+                  <a href={item.href} className="pointer-events-auto">
                     <span className="text-primary mr-1">{'>'}</span>
                     {item.label}
                   </a>
@@ -85,7 +86,7 @@ export default function Header() {
           <Button
             variant="ghost"
             size="icon"
-            className="md:hidden text-primary hover:bg-primary/10"
+            className="md:hidden text-primary hover:bg-primary/10 cursor-pointer pointer-events-auto z-[110]"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             data-testid="mobile-menu-button"
           >
