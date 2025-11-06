@@ -41,6 +41,10 @@ export default function Header() {
           {/* Logo */}
           <motion.a
             href="#"
+            onClick={(e) => {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: 'smooth' });
+            }}
             className="flex items-center gap-2 group cursor-pointer pointer-events-auto z-[110]"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
