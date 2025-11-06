@@ -5,6 +5,7 @@ import { Badge } from "@/components/ui/badge";
 import { Card, CardContent } from "@/components/ui/card";
 import { Mail, Phone, Linkedin, Github, ChevronDown, Terminal, Code2, Cpu, Zap } from "lucide-react";
 import { useSmoothScroll } from "@/components/smooth-scroll";
+import Header from "@/components/Header";
 
 export default function Portfolio() {
   const { scrollY } = useScroll();
@@ -21,6 +22,7 @@ export default function Portfolio() {
 
   return (
     <div className="min-h-screen bg-background text-foreground crt-noise crt-scanlines cursor-trail overflow-x-hidden">
+      <Header />
       <HeroSection parallaxY={parallaxY} />
       <AboutSection />
       <ProjectsSection />
@@ -510,7 +512,7 @@ function Footer() {
   }, []);
 
   return (
-    <footer className="relative py-16 px-4 border-t-2 border-primary/30 bg-card/20" data-testid="footer-contact">
+    <footer id="footer" className="relative py-16 px-4 border-t-2 border-primary/30 bg-card/20" data-testid="footer-contact">
       <div className="w-full max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
