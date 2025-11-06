@@ -1,3 +1,5 @@
+// client/src/main.tsx
+import * as React from "react";      // << ADD THIS
 import { createRoot } from "react-dom/client";
 import { Router } from "wouter";
 import App from "./App";
