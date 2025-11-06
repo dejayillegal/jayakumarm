@@ -1,4 +1,4 @@
-// vite.config.js
+// vite.config.js (or .ts)
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react";
 import path from "path";
@@ -9,14 +9,11 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default defineConfig(async () => {
-  // Production base for GitHub Pages project site (repo name)
-  const repoBase = "/jayakumarm/";
+  const repoBase = "/jayakumarm/"; // <-- important
 
-  // Build list of plugins; conditionally add Replit dev-only plugins
   const plugins = [react(), runtimeErrorOverlay()];
 
   if (process.env.NODE_ENV !== "production" && process.env.REPL_ID !== undefined) {
-    // dynamic import of replit dev plugins only in dev/replit environments
     const carto = await import("@replit/vite-plugin-cartographer").then((m) => m.cartographer());
     const devBanner = await import("@replit/vite-plugin-dev-banner").then((m) => m.devBanner());
     plugins.push(carto, devBanner);
@@ -36,7 +33,7 @@ export default defineConfig(async () => {
     build: {
       outDir: path.resolve(__dirname, "dist/public"),
       emptyOutDir: true,
-      sourcemap: false, // avoid eval/source-map issues in prod
+      sourcemap: false,
     },
     server: {
       fs: {
