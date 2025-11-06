@@ -1,0 +1,161 @@
+Build “JAYAKUMAR M — WEB ARCHITECT • QA INNOVATOR” Portfolio in Retro-Futurist Arcade Style
+
+Create a high-fidelity, ultra-interactive portfolio website for Jayakumar M that visually merges retro arcade terminals with futuristic minimalism.
+The style should feel like a high-end experimental UI running on a CRT console from 2080 — tactile, pixel-perfect, yet elegant.
+
+🎨 Art Direction
+
+Primary aesthetic: Arcade/Terminal fusion — black & white base, orange accent glow, subtle CRT scanlines overlay.
+
+Typography: Monospace font family (JetBrains Mono / IBM Plex Mono). Large display titles using bitmap or pixel grid style fonts.
+
+Motion language: Inspired by eloyb.design — kinetic type, scroll-linked parallax, smooth glitch transitions, and motion-blur trails.
+
+UI layout: Modular grid with asymmetric composition and animated borders.
+
+Background: Deep matte black with moving scanline noise texture, light glow effects near borders.
+
+Transitions: Terminal-like typewriter animations, soft flickers, pixel dissolve, data streaming effects.
+
+Cursor: Retro orange pulse, trailing glow on hover.
+
+3D feel: Use subtle perspective transforms for panels, like they exist on an old CRT interface.
+
+🏁 Hero Section
+
+Tagline:
+> JAYAKUMAR M — WEB ARCHITECT • QA INNOVATOR
+
+Headline (animated):
+Architecting scalable systems that merge automation, intelligence, and design.
+→ Typewriter-in effect with orange flicker, then subtle scanline glow.
+
+Subtext (monospace):
+Precision-crafted pipelines, resilient architectures, and humane interfaces. Engineered yet emotional.
+
+CTAs:
+
+[CONTACT ↗] → mailto:jmunuswa@gmail.com (terminal-style button animation)
+
+[ABOUT ME ↓] → scrolls to About section
+
+Right column:
+
+Portrait card framed with neon orange circuit lines, corner highlights, and pulsing data halo.
+
+Floating translucent “tags” rendered as glass-pixel pills:
+
+[Automation]
+
+[Architecture]
+
+[Quality • Reliability]
+
+🧭 About Section
+
+Header: # ABOUT_ME {}
+
+Intro text:
+“I design scalable, testable, and observable systems where automation and intelligence create clarity.
+My practice blends rigorous engineering with humane product thinking — fault tolerance, performance budgets, and developer experience so teams move faster with greater confidence.”
+
+Focus Grid (three data cards):
+
+FOCUS: Distributed systems, event-driven architectures, contract testing, observability, SRE.
+
+METHOD: Constraints-first design, shift-left testing, trace-led debugging.
+
+VALUES: Clarity, empathy, reliability, and purposeful automation.
+
+Each card should animate in with a “data-upload” or “matrix decode” effect.
+
+💾 Projects Section — “/PROJECTS_RUN”
+
+Design this like a console command output, where each project appears as a boot entry with a short animated loading bar.
+
+Layout: Two-column or flexible grid with glowing outlines and command-line inspired icons.
+Add flicker/glitch reveal animations.
+
+Projects:
+
+thecueRoom
+Next-gen creative platform merging AI cover art, EPK generation, and meme spotlighting for artists.
+Tech: Next.js, Firebase, Tailwind, Drizzle ORM, AI Integration
+
+JobFinder Pro
+Precision-built job-matching engine featuring analytics-driven automation and UX clarity.
+Tech: React, Node.js, PostgreSQL, Selenium QA Framework
+
+C/No Voidline
+GNSS signal visualization tool for real-time C/No analytics, fault simulation, and noise reduction.
+Tech: Python, Android NDK, Serial Data Parsing
+
+GNSS Android Test App
+Embedded Android testing suite for GPS/GNSS validation with live metrics and cloud integration.
+Tech: Kotlin, Python, ADB Automation
+
+Hover effect: Project cards emit orange neon borders and pixel particle drift.
+
+🕓 Career Timeline — “/JOURNEY_LOG”
+
+Vertical timeline styled as a data stream console, with pulsing orange nodes on the left and textual logs on the right.
+
+Each entry slides in like terminal boot logs:
+
+> 2019—2025 | Senior Software Engineer in Test – Capgemini / Google GNSS QA
+>> Built Python automation and analytics frameworks for GNSS device validation.
+
+
+Continue similarly for:
+
+2017—2019 | L&T Tech / Intel – Medical Devices
+
+2016—2017 | L&T / Technicolor – Firmware
+
+2012—2016 | Huawei, Intel, Motorola – LTE/GNSS
+
+2009—2012 | LG Soft India – Multimedia Firmware
+
+Each fades in with a flicker effect and sound feedback.
+
+🧠 Footer — “/CONTACT_ROOT”
+
+Minimal, aligned center. Neon orange divider line, glowing signature.
+
+> JAYAKUMAR M
+> Web Developer • Systems Architect • Test Architect
+> Status: AVAILABLE • ADVISORY ⬤ (live pulse animation)
+> 
+> EMAIL: jmunuswa@gmail.com
+> PHONE: +91-9818967280
+> LINKEDIN: linkedin.com/in/jmunuswa
+> GITHUB: github.com/dejayillegal
+
+
+Sub-footer:
+“© 2025 Jayakumar M — Built with automation, art, and intent.”
+
+⚙️ Micro-interactions / Effects
+
+Hover sounds (soft CRT clicks or hum).
+
+Page transitions use pixel distortion / signal loss animation.
+
+Scroll reveals simulate “terminal logs appearing.”
+
+Cursor trails light path (orange → white → fade).
+
+Easter egg: typing “help” in console overlay displays hidden command list.
+
+🧩 Tech Stack Recommendation
+
+Frontend: Next.js + Tailwind + Framer Motion
+Font: JetBrains Mono, VT323, Space Mono
+Theme: Dark (primary black), accent orange (#FF6B00), secondary gray, highlight lime.
+Textures: CRT scanlines, dithering noise overlay (CSS blend mode).
+Optional CMS: Firebase or Sanity for project/blog data.
+Hosting: Vercel.
+
+🪩 Overall Feel
+
+A perfect balance of retro computing, modern motion, and precision-coded intelligence — a portfolio that looks like it could be displayed on a neural terminal in a sci-fi operating lab.
