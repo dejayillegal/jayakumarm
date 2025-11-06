@@ -151,7 +151,7 @@ function HeroSection() {
                   </div>
                 </div>
 
-                <div className="flex flex-wrap gap-2 justify-center" data-testid="container-skills"></div>
+                <div className="flex flex-wrap gap-2 justify-center" data-testid="container-skills">
                   {["Automation", "Architecture", "Quality • Reliability"].map((skill, i) => (
                     <motion.div
                       key={skill}
