@@ -4,14 +4,16 @@ export function useSmoothScroll() {
   useEffect(() => {
     const handleClick = (e: Event) => {
       const target = e.currentTarget as HTMLAnchorElement;
-      e.preventDefault();
       const href = target.getAttribute('href');
-      if (href && href !== '#') {
+      
+      if (href && href.startsWith('#') && href !== '#') {
+        e.preventDefault();
         const element = document.querySelector(href);
         if (element) {
-          element.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start',
+          const top = element.getBoundingClientRect().top + window.pageYOffset;
+          window.scrollTo({
+            top: top,
+            behavior: 'smooth'
           });
         }
       }
@@ -19,7 +21,7 @@ export function useSmoothScroll() {
 
     const anchors = document.querySelectorAll('a[href^="#"]');
     anchors.forEach(anchor => {
-      anchor.addEventListener('click', handleClick);
+      anchor.addEventListener('click', handleClick, { passive: false });
     });
 
     return () => {

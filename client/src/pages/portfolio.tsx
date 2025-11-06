@@ -8,9 +8,6 @@ import { useSmoothScroll } from "@/components/smooth-scroll";
 import Header from "@/components/Header";
 
 export default function Portfolio() {
-  const { scrollY } = useScroll();
-  const parallaxY = useTransform(scrollY, [0, 1000], [0, -200]);
-  
   useSmoothScroll();
 
   useEffect(() => {
@@ -21,9 +18,9 @@ export default function Portfolio() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-background text-foreground crt-noise crt-scanlines cursor-trail overflow-x-hidden">
+    <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Header />
-      <HeroSection parallaxY={parallaxY} />
+      <HeroSection />
       <AboutSection />
       <ProjectsSection />
       <TimelineSection />
@@ -32,7 +29,7 @@ export default function Portfolio() {
   );
 }
 
-function HeroSection({ parallaxY }: { parallaxY: any }) {
+function HeroSection() {
   const [displayedText, setDisplayedText] = useState("");
   const [showCursor, setShowCursor] = useState(true);
   const fullText = "Architecting scalable systems that merge automation, intelligence, and design.";
@@ -54,7 +51,7 @@ function HeroSection({ parallaxY }: { parallaxY: any }) {
 
   return (
     <section className="relative min-h-screen flex items-center justify-center px-4 py-20 md:py-32" data-testid="section-hero">
-      <motion.div style={{ y: parallaxY }} className="w-full max-w-7xl mx-auto">
+      <div className="w-full max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <motion.div 
             initial={{ opacity: 0, x: -50 }}
@@ -188,6 +185,7 @@ function HeroSection({ parallaxY }: { parallaxY: any }) {
       >
         <ChevronDown className="w-6 h-6 text-primary animate-bounce" />
       </motion.div>
+    </div>
     </section>
   );
 }
