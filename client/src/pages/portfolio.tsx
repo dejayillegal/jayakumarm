@@ -319,7 +319,7 @@ function ProjectsSection() {
   ];
 
   return (
-    <section className="relative py-20 md:py-32 px-4 bg-card/20" data-testid="section-projects">
+    <section id="projects" className="relative py-20 md:py-32 px-4 bg-card/20" data-testid="section-projects">
       <div className="w-full max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -435,7 +435,7 @@ function TimelineSection() {
   ];
 
   return (
-    <section className="relative py-20 md:py-32 px-4" data-testid="section-timeline">
+    <section id="timeline" className="relative py-20 md:py-32 px-4" data-testid="section-timeline">
       <div className="w-full max-w-7xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
